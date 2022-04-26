@@ -1,0 +1,4 @@
+__pycache__
+jwt-env
+.env
+*/__pycache__
