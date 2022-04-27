@@ -22,8 +22,9 @@ async def register(User: UserModel):
 @router.post('/login')
 async def login(User: UserModel):
     user = jsonable_encoder(User)
-    token = await login_user(user)
+    token, user = await login_user(user)
+    print(user)
     if(token is None):
         raise HTTPException(status_code=401, detail='Invalid username and/or password')
     else:
-        return {'type': "Bearer" ,'token': token}
+        return {'type': "Bearer" ,'token': token }

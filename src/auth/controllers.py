@@ -26,7 +26,7 @@ async def login_user(user_details):
         return None
     user = user_helper(user)
     token = auth_handler.encode_token(user["u_id"])
-    return token
+    return token, user
 
 def user_helper(user) -> dict:
     return {
